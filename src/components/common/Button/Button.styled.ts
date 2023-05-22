@@ -25,7 +25,7 @@ export const ButtonStyled = styled.button<{
       background: ${_variables.PALETTE.COLOR_SEVEN};
       border-radius: 40px;
       width: 200px;
-      height: 60px;
+      min-height: 60px;
       font-family: ${_variables.FONT.FAMILY.FONT_PRIMARY};
       font-weight: ${_variables.FONT.WEIGHT.FW_REGULAR};
       font-size: ${_variables.FONT.SIZE.FS_MEDIUM_SMALL};
