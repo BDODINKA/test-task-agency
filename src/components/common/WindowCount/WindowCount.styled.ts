@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { _variables } from "../../core/variables/palette";
+import { _variables } from "../../../core/variables/palette";
 
 export const WindowCountStyled = styled.div`
   font-family: ${_variables.FONT.FAMILY.FONT_PRIMARY};

@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useDataTimer } from "../../core/hooks/useDataTimer";
-import { WindowCountStyled } from "../WindowCount/WindowCount.styled";
-import { Lasting } from "../Lasting/Lasting";
+import { WindowCountStyled } from "../common/WindowCount/WindowCount.styled";
+import { Lasting } from "../common/Lasting/Lasting";
 import {
   CountDateTimerStyled,
   CountTimerItemsStyled,

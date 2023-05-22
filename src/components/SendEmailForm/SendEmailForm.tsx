@@ -1,26 +1,35 @@
-import React, { ChangeEvent, FC } from "react";
-import { Input } from "../Input/Input";
-import { Button } from "../Button/Button";
+import React, { ChangeEvent, FC, useEffect, useRef } from "react";
+import { Input } from "../common/Input/Input";
+import { Button } from "../common/Button/Button";
 import { SendEmailFormStyled } from "./SendEmailForm.styled";
 import { useValidationEmail } from "../../core/hooks/useValidationEmail";
-import { ErrorMessageStyled } from "../ErrorMessage/ErrorMessage.styled";
+import { ErrorMessageStyled } from "../common/ErrorMessage/ErrorMessage.styled";
 
 export const SendEmailForm: FC<{
   emailHandler: (email: string) => void;
-}> = ({ emailHandler }) => {
+  resetField: boolean;
+}> = ({ emailHandler, resetField }) => {
   const { email, handleEmailChange, isValid, error } = useValidationEmail();
+
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  useEffect(() => {
+    if (resetField) {
+      formRef.current?.reset();
+    }
+  }, [resetField]);
 
   const onSubmitEmailHandler = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     emailHandler(email);
   };
 
   return (
-    <SendEmailFormStyled onSubmit={onSubmitEmailHandler}>
+    <SendEmailFormStyled onSubmit={onSubmitEmailHandler} ref={formRef}>
       <Input
         placeholder={"Enter your Email and get notified"}
         type="email"
-        value={email}
         onChange={handleEmailChange}
       />
       <Button icon={true} $btnType={"input"} />

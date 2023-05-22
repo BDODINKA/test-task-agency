@@ -4,10 +4,11 @@ import { SendEmailForm } from "../SendEmailForm/SendEmailForm";
 
 export const Footer: FC<{
   emailHandler: (email: string) => void;
-}> = ({ emailHandler }) => {
+  resetField: boolean;
+}> = ({ ...rest }) => {
   return (
     <FooterStyled>
-      <SendEmailForm emailHandler={emailHandler} />
+      <SendEmailForm {...rest} />
     </FooterStyled>
   );
 };

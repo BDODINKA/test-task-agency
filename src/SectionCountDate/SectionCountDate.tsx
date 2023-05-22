@@ -1,7 +1,7 @@
 import React from "react";
-import { Title } from "../components/Title/Title";
-import { SubTitle } from "../components/SubTitle/SubTitle";
-import { Wrapper } from "../components/Wrapper/Wrapper";
+import { Title } from "../components/common/Title/Title";
+import { SubTitle } from "../components/common/SubTitle/SubTitle";
+import { Wrapper } from "../components/common/Wrapper/Wrapper";
 import {
   SectionCountDateButton,
   SectionCountDateStyled,
@@ -9,7 +9,7 @@ import {
   SectionCountStyled,
 } from "./SectionCountDate.styled";
 import { CountDateTimer } from "../components/CountDateTimer/CountDateTimer";
-import { Button } from "../components/Button/Button";
+import { Button } from "../components/common/Button/Button";
 import { ReactComponent as BgClaks } from "../assets/svg/Vector (1).svg";
 
 export const SectionCountDate = () => {
