@@ -28,5 +28,5 @@ export const useValidationEmail = () => {
     setEmail(e.target.value);
   };
 
-  return { email, handleEmailChange, isValid, error };
+  return { email, handleEmailChange, isValid, error, setEmail };
 };
