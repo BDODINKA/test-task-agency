@@ -7,13 +7,16 @@ export const TitleBigStyled = styled.h1<{ width?: number; height?: number }>`
   font-style: normal;
   font-size: ${_variables.FONT.SIZE.FS_LARGE};
   line-height: 104%;
-  text-align: center;
   text-transform: uppercase;
-
+  text-align: center;
   color: ${_variables.PALETTE.COLOR_PRIMARY};
   opacity: 0.39;
   width: ${(props) => (props.width ? `${props.width}px` : "100%")};
   height: ${(props) => (props.height ? `${props.height}px` : "100%")};
+  margin: 0 auto;
+  @media (max-width: 1920px) {
+    font-size: ${_variables.FONT.SIZE.FS_MEDIUM};
+  }
 `;
 
 export const TitleSmallStyled = styled.h2<{ width?: number; height?: number }>`

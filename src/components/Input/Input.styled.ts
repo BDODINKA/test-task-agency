@@ -20,4 +20,13 @@ export const InputStyled = styled.input`
   & ::placeholder {
     color: ${_variables.PALETTE.COLOR_NINE};
   }
+
+  @media (max-width: 1920px) {
+    width: 360px;
+    height: 41px;
+    font-size: ${_variables.FONT.SIZE.FS_SMALL_MEDIUM};
+  }
+  @media (max-width: 767px) {
+    width: 280px;
+  }
 `;

@@ -9,7 +9,10 @@ export const SubTitleStyled = styled.h3<{ width?: number; height?: number }>`
   line-height: 150%;
   color: ${_variables.PALETTE.COLOR_SIX};
   text-align: center;
-  text-transform: uppercase;
   width: ${(props) => (props.width ? `${props.width}px` : "100%")};
   height: ${(props) => (props.height ? `${props.height}px` : "100%")};
+  @media (max-width: 1920px) {
+    font-size: ${_variables.FONT.SIZE.FS_SMALL_LARGE};
+    width: 300px;
+  }
 `;

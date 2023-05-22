@@ -8,4 +8,7 @@ export const WindowCountStyled = styled.div`
   line-height: 100%;
 
   color: ${_variables.PALETTE.COLOR_PRIMARY};
+  @media (max-width: 1920px) {
+    font-size: ${_variables.FONT.SIZE.FS_MEDIUM};
+  }
 `;

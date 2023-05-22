@@ -7,7 +7,7 @@ import {
   CountTimerItemsStyled,
 } from "./CountDateTimer.styled";
 
-export const CountDateTimer: FC<{ date: string }> = ({ date }) => {
+export const CountDateTimer: FC<{ date: number }> = ({ date }) => {
   const {
     timerMinutes,
     timerDays,
@@ -19,11 +19,10 @@ export const CountDateTimer: FC<{ date: string }> = ({ date }) => {
 
   useEffect(() => {
     startTimer();
-
     return () => {
       clearInterval(interval);
     };
-  }, [interval, startTimer]);
+  }, [interval]);
 
   return (
     <CountDateTimerStyled>

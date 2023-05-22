@@ -13,6 +13,10 @@ export const ButtonStyled = styled.button<{
       border: none;
       cursor: pointer;
       background: ${_variables.PALETTE.COLOR_FIVE};
+      @media (max-width: 1920px) {
+        width: 33px;
+        height: 33px;
+      }
     `}
 
   ${(props) =>

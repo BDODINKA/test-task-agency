@@ -6,17 +6,20 @@ export const LastingStyled = styled.div`
   height: 54px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 
-  & svg {
+  & > svg {
     position: absolute;
     fill: ${_variables.PALETTE.COLOR_FIVE};
+    width: 100%;
+    height: auto;
   }
 
   & > p {
     position: absolute;
     left: 50%;
-    width: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 0%);
     overflow: hidden;
 
     font-family: ${_variables.FONT.FAMILY.FONT_PRIMARY};
@@ -26,5 +29,12 @@ export const LastingStyled = styled.div`
 
     color: ${_variables.PALETTE.COLOR_FOUR};
     text-align: center;
+  }
+
+  @media (max-width: 1920px) {
+    width: 64px;
+    & > p {
+      font-size: ${_variables.FONT.SIZE.FS_SMALL};
+    }
   }
 `;

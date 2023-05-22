@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-export const useDataTimer = (date: string) => {
+export const useDataTimer = (date: number) => {
   const [timerDays, setTimerDays] = useState(0);
   const [timerHours, setTimerHours] = useState(0);
   const [timerMinutes, setTimerMinutes] = useState(0);
@@ -11,6 +11,7 @@ export const useDataTimer = (date: string) => {
 
   const startTimer = () => {
     const countDownDate = new Date(targetDate).getTime();
+
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;

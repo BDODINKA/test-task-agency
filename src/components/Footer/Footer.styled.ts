@@ -7,5 +7,10 @@ export const FooterStyled = styled.footer`
   display: flex;
   justify-content: center;
   background: ${_variables.PALETTE.COLOR_PRIMARY};
-  flex: 0 0 auto;
+  @media (max-width: 1920px) {
+    height: 160px;
+  }
+  @media (max-width: 767px) {
+    height: 141px;
+  }
 `;
