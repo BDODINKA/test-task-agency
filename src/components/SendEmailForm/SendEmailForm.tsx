@@ -16,7 +16,7 @@ export const SendEmailForm: FC<{
   const onSubmitEmailHandler = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     await sendDataToEmail(email);
-    if (response === "Ok") {
+    if (response === "Ok" && email !== "") {
       e.target.reset();
       emailHandler();
       setEmail("");
