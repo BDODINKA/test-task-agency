@@ -1,11 +1,20 @@
 import styled from "styled-components";
 import { _variables } from "../../core/variables/palette";
+import { HTMLAttributes } from "react";
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled.div<
+  HTMLAttributes<HTMLDivElement> & { open: boolean }
+>`
   background: ${_variables.PALETTE.COLOR_TEN};
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ModalContent = styled.div`
@@ -21,8 +30,6 @@ export const ModalWindow = styled.div`
   padding: 8px;
   width: 320px;
   height: 370px;
-  left: 50%;
-  transform: translate(-50%, 50%);
   background: ${_variables.PALETTE.COLOR_FOUR};
   border: 1px solid ${_variables.PALETTE.COLOR_ELEVEN};
   border-radius: 2px;

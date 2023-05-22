@@ -4,14 +4,14 @@ import { _variables } from "../../core/variables/palette";
 export const ButtonStyled = styled.button<{
   btnType: "input" | "close" | "default";
 }>`
+  cursor: pointer;
+  border: none;
   ${(props) =>
     props.btnType === "input" &&
     css`
       width: 43px;
       height: 43px;
       border-radius: 50%;
-      border: none;
-      cursor: pointer;
       background: ${_variables.PALETTE.COLOR_FIVE};
       @media (max-width: 1920px) {
         width: 33px;
@@ -27,7 +27,6 @@ export const ButtonStyled = styled.button<{
       width: 200px;
       height: 60px;
       font-family: ${_variables.FONT.FAMILY.FONT_PRIMARY};
-
       font-weight: ${_variables.FONT.WEIGHT.FW_REGULAR};
       font-size: ${_variables.FONT.SIZE.FS_MEDIUM_SMALL};
       line-height: 150%;
@@ -41,7 +40,6 @@ export const ButtonStyled = styled.button<{
       width: 55px;
       height: 55px;
       background: transparent;
-      border: none;
 
       & > svg {
         fill: ${_variables.PALETTE.COLOR_TWELVE};
@@ -65,5 +63,4 @@ export const LinkBtnStyled = styled.a`
   line-height: 150%;
   color: ${_variables.PALETTE.COLOR_FOUR};
   text-decoration: none;
-  cursor: pointer;
 `;

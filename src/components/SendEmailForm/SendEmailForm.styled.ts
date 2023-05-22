@@ -13,4 +13,11 @@ export const SendEmailFormStyled = styled.form`
       right: 4px;
     }
   }
+
+  & > p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 10px);
+  }
 `;
