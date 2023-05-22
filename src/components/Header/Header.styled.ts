@@ -9,6 +9,7 @@ export const HeaderStyled = styled.header`
   padding-top: 60px;
   left: 50%;
   transform: translate(-50%, 0);
+  z-index: 10;
   @media (max-width: 1920px) {
     padding-top: 100px;
   }
