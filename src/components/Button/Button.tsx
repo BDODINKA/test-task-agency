@@ -6,10 +6,10 @@ import { ReactComponent as Close } from "../../assets/svg/close.svg";
 export const Button: FC<
   HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> & {
     icon: boolean;
-    btnType: "link" | "input" | "close" | "default";
+    $btnType: "link" | "input" | "close" | "default";
   }
-> = ({ icon, btnType, ...rest }) => {
-  if (btnType === "link")
+> = ({ icon, $btnType, ...rest }) => {
+  if ($btnType === "link")
     return (
       <LinkBtnStyled {...rest}>
         {rest.children}
@@ -17,22 +17,22 @@ export const Button: FC<
       </LinkBtnStyled>
     );
 
-  if (btnType === "input")
+  if ($btnType === "input")
     return (
-      <ButtonStyled {...rest} btnType={btnType}>
+      <ButtonStyled {...rest} $btnType={$btnType}>
         {icon && <Arrow />}
       </ButtonStyled>
     );
 
-  if (btnType === "close")
+  if ($btnType === "close")
     return (
-      <ButtonStyled {...rest} btnType={btnType}>
+      <ButtonStyled {...rest} $btnType={$btnType}>
         {icon && <Close />}
       </ButtonStyled>
     );
 
   return (
-    <ButtonStyled {...rest} btnType={btnType}>
+    <ButtonStyled {...rest} $btnType={$btnType}>
       {rest.children}
     </ButtonStyled>
   );

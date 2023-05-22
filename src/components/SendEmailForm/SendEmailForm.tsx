@@ -23,8 +23,8 @@ export const SendEmailForm: FC<{
         value={email}
         onChange={handleEmailChange}
       />
-      <Button icon={true} btnType={"input"} />
-      {error && !isValid && (
+      <Button icon={true} $btnType={"input"} />
+      {!!email && error && !isValid && (
         <ErrorMessageStyled>{"Email is Not Validate"}</ErrorMessageStyled>
       )}
     </SendEmailFormStyled>

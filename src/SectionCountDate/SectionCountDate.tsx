@@ -31,7 +31,7 @@ export const SectionCountDate = () => {
         </SectionCountStyled>
         <SectionCountDateButton>
           <SubTitle children={"Check our event page when you wait:"} />
-          <Button btnType={"link"} icon={true} children={"Go to the event"} />
+          <Button $btnType={"link"} icon={true} children={"Go to the event"} />
         </SectionCountDateButton>
       </SectionCountDateStyled>
     </Wrapper>

@@ -10,7 +10,7 @@ export const ModalSuccess: FC<{
 }> = ({ onClickCard, setClose }) => {
   return (
     <ModalWindow onClick={onClickCard}>
-      <Button icon={true} btnType={"close"} onClick={setClose} />
+      <Button icon={true} $btnType={"close"} onClick={setClose} />
       <ModalContent>
         <Title children={"SUCCESS!"} size={"sm"} />
         <SubTitle
@@ -18,7 +18,7 @@ export const ModalSuccess: FC<{
         />
         <Button
           icon={false}
-          btnType={"default"}
+          $btnType={"default"}
           children={"Close"}
           onClick={setClose}
         />

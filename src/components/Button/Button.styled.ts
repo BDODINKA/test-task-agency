@@ -2,12 +2,12 @@ import styled, { css } from "styled-components";
 import { _variables } from "../../core/variables/palette";
 
 export const ButtonStyled = styled.button<{
-  btnType: "input" | "close" | "default";
+  $btnType: "input" | "close" | "default";
 }>`
   cursor: pointer;
   border: none;
   ${(props) =>
-    props.btnType === "input" &&
+    props.$btnType === "input" &&
     css`
       width: 43px;
       height: 43px;
@@ -20,7 +20,7 @@ export const ButtonStyled = styled.button<{
     `}
 
   ${(props) =>
-    props.btnType === "default" &&
+    props.$btnType === "default" &&
     css`
       background: ${_variables.PALETTE.COLOR_SEVEN};
       border-radius: 40px;
@@ -35,7 +35,7 @@ export const ButtonStyled = styled.button<{
     `}
 
   ${(props) =>
-    props.btnType === "close" &&
+    props.$btnType === "close" &&
     css`
       width: 55px;
       height: 55px;
