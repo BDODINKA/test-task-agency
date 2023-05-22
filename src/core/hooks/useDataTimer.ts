@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 
 export const useDataTimer = (date: number) => {
-  const [timerDays, setTimerDays] = useState(0);
-  const [timerHours, setTimerHours] = useState(0);
-  const [timerMinutes, setTimerMinutes] = useState(0);
-  const [timerSeconds, setTimerSeconds] = useState(0);
+  const [timerDays, setTimerDays] = useState("");
+  const [timerHours, setTimerHours] = useState("");
+  const [timerMinutes, setTimerMinutes] = useState("");
+  const [timerSeconds, setTimerSeconds] = useState("");
   const [targetDate, setTargetDate] = useState(date);
 
   let interval = useRef().current;
@@ -25,13 +25,18 @@ export const useDataTimer = (date: number) => {
       if (distance < 0) {
         clearInterval(interval);
       } else {
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
+        if (days < 10) setTimerDays(`0${days}`);
+        else setTimerDays(`${days}`);
+        if (hours < 10) setTimerHours(`0${hours}`);
+        else setTimerHours(`${hours}`);
+        if (minutes < 10) setTimerMinutes(`0${minutes}`);
+        else setTimerMinutes(`${minutes}`);
+        if (seconds < 10) setTimerSeconds(`0${seconds}`);
+        else setTimerSeconds(`${seconds}`);
       }
     }, 1000);
   };
+
   return {
     timerDays,
     timerHours,
