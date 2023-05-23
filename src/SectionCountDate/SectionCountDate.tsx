@@ -9,7 +9,7 @@ import {
   SectionCountStyled,
 } from "./SectionCountDate.styled";
 import { CountDateTimer } from "../components/CountDateTimer/CountDateTimer";
-import { Button } from "../components/common/Button/Button";
+import { Buttons } from "../components/common/Buttons/Buttons";
 import { ReactComponent as BgClaks } from "../assets/svg/Vector (1).svg";
 
 export const SectionCountDate = () => {
@@ -31,7 +31,7 @@ export const SectionCountDate = () => {
         </SectionCountStyled>
         <SectionCountDateButton>
           <SubTitle children={"Check our event page when you wait:"} />
-          <Button $btnType={"link"} icon={true} children={"Go to the event"} />
+          <Buttons $btnType={"link"} icon={true} children={"Go to the event"} />
         </SectionCountDateButton>
       </SectionCountDateStyled>
     </Wrapper>

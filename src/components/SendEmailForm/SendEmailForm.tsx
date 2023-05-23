@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC } from "react";
 import { Input } from "../common/Input/Input";
-import { Button } from "../common/Button/Button";
+import { Buttons } from "../common/Buttons/Buttons";
 import { SendEmailFormStyled } from "./SendEmailForm.styled";
 import { useValidationEmail } from "../../core/hooks/useValidationEmail";
 import { ErrorMessageStyled } from "../common/ErrorMessage/ErrorMessage.styled";
@@ -31,7 +31,7 @@ export const SendEmailForm: FC<{
         value={email}
         onChange={handleEmailChange}
       />
-      <Button icon={true} $btnType={"input"} />
+      <Buttons icon={true} $btnType={"input"} />
       {!!email && error && !isValid && (
         <ErrorMessageStyled>{"Email is Not Validate"}</ErrorMessageStyled>
       )}

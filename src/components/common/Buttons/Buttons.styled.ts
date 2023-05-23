@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import { _variables } from "../../../core/variables/palette";
 
-export const ButtonStyled = styled.button<{
-  $btnType: "input" | "close" | "default";
+export const ButtonsStyled = styled.button<{
+  $btnType: "input" | "close" | "default" | "drop";
 }>`
   cursor: pointer;
   border: none;

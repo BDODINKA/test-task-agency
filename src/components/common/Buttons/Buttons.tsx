@@ -1,12 +1,12 @@
 import React, { FC, HTMLAttributes } from "react";
-import { ButtonStyled, LinkBtnStyled } from "./Button.styled";
+import { ButtonsStyled, LinkBtnStyled } from "./Buttons.styled";
 import { ReactComponent as Arrow } from "../../../assets/svg/arrow.svg";
 import { ReactComponent as Close } from "../../../assets/svg/close.svg";
 
-export const Button: FC<
+export const Buttons: FC<
   HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> & {
     icon: boolean;
-    $btnType: "link" | "input" | "close" | "default";
+    $btnType: "link" | "input" | "close" | "default" | "drop";
   }
 > = ({ icon, $btnType, ...rest }) => {
   if ($btnType === "link")
@@ -19,21 +19,28 @@ export const Button: FC<
 
   if ($btnType === "input")
     return (
-      <ButtonStyled {...rest} $btnType={$btnType}>
+      <ButtonsStyled {...rest} $btnType={$btnType}>
         {icon && <Arrow />}
-      </ButtonStyled>
+      </ButtonsStyled>
     );
 
   if ($btnType === "close")
     return (
-      <ButtonStyled {...rest} $btnType={$btnType}>
+      <ButtonsStyled {...rest} $btnType={$btnType}>
         {icon && <Close />}
-      </ButtonStyled>
+      </ButtonsStyled>
+    );
+
+  if ($btnType === "drop")
+    return (
+      <ButtonsStyled {...rest} $btnType={$btnType}>
+        {icon && <Arrow />}
+      </ButtonsStyled>
     );
 
   return (
-    <ButtonStyled {...rest} $btnType={$btnType}>
+    <ButtonsStyled {...rest} $btnType={$btnType}>
       {rest.children}
-    </ButtonStyled>
+    </ButtonsStyled>
   );
 };

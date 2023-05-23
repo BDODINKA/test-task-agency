@@ -2,7 +2,7 @@ import React, { FC, SyntheticEvent } from "react";
 import { ModalContent, ModalWindow } from "./Modal.styled";
 import { Title } from "../Title/Title";
 import { SubTitle } from "../SubTitle/SubTitle";
-import { Button } from "../Button/Button";
+import { Buttons } from "../Buttons/Buttons";
 
 export const ModalSuccess: FC<{
   onClickCard: (e: SyntheticEvent) => void;
@@ -10,13 +10,13 @@ export const ModalSuccess: FC<{
 }> = ({ onClickCard, setClose }) => {
   return (
     <ModalWindow onClick={onClickCard}>
-      <Button icon={true} $btnType={"close"} onClick={setClose} />
+      <Buttons icon={true} $btnType={"close"} onClick={setClose} />
       <ModalContent>
         <Title children={"SUCCESS!"} size={"sm"} />
         <SubTitle
           children={"You have successfully subscribed to the email newsletter"}
         />
-        <Button
+        <Buttons
           icon={false}
           $btnType={"default"}
           children={"Close"}
