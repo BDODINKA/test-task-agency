@@ -63,4 +63,5 @@ export const LinkBtnStyled = styled.a`
   line-height: 150%;
   color: ${_variables.PALETTE.COLOR_FOUR};
   text-decoration: none;
+  cursor: pointer;
 `;
