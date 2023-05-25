@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { api } from "../api/api";
 
 export const useSendToEmail = () => {
-  const [response, setResponse] = useState({});
+  const [response, setResponse] = useState({ response: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [dataToEmail, sendDataToEmail] = useState<string | null>(null);
+  const [dataToEmail, sendDataToEmail] = useState<{ email: string } | null>(
+    null
+  );
 
   useEffect(() => {
     if (!dataToEmail) return;
@@ -13,8 +15,8 @@ export const useSendToEmail = () => {
     (async () => {
       setIsLoading(true);
       try {
-        const res = await api.sendMail(dataToEmail);
-        setResponse(res.data);
+        const res = await api.sendMail(dataToEmail.email);
+        setResponse({ response: res.data });
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);

@@ -9,6 +9,7 @@ export const SendEmailFormStyled = styled.form`
   & > button {
     position: absolute;
     right: 8px;
+    z-index: 100;
     @media (max-width: 1920px) {
       right: 4px;
     }

@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FC } from "react";
+import React, {
+  ChangeEvent,
+  FC,
+  MutableRefObject,
+  useEffect,
+  useRef,
+} from "react";
 import { Input } from "../common/Input/Input";
 import { Buttons } from "../common/Buttons/Buttons";
 import { SendEmailFormStyled } from "./SendEmailForm.styled";
@@ -13,18 +19,26 @@ export const SendEmailForm: FC<{
     useValidationEmail();
   const { response, sendDataToEmail } = useSendToEmail();
 
-  const onSubmitEmailHandler = async (e: ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    await sendDataToEmail(email);
-    if (response === "Ok" && email !== "") {
-      e.target.reset();
+  const ref = useRef() as MutableRefObject<HTMLFormElement>;
+
+  useEffect(() => {
+    if (response.response === "Ok") {
+      ref.current.reset();
       emailHandler();
       setEmail("");
+      sendDataToEmail(null);
+    }
+  }, [response]);
+
+  const onSubmitEmailHandler = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (email) {
+      sendDataToEmail({ email });
     }
   };
 
   return (
-    <SendEmailFormStyled onSubmit={onSubmitEmailHandler}>
+    <SendEmailFormStyled onSubmit={onSubmitEmailHandler} ref={ref}>
       <Input
         placeholder={"Enter your Email and get notified"}
         type="email"
